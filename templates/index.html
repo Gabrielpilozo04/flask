@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a Joyeria Anahi's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff); /* Degradado de fondo */
+        }
+        .hero {
+            background-color: #00bcd4; /* Color de fondo del héroe */
+            color: white; /* Color del texto */
+        }
+        .hero h1 {
+            font-size: 3rem; /* Tamaño de fuente más grande para el título */
+        }
+        .hero h2 {
+            font-size: 1.5rem; /* Tamaño de fuente para el subtítulo */
+        }
+        .buttons {
+            margin-top: 20px; /* Espaciado entre botones */
+            display: flex; /* Utiliza flexbox para centrar los elementos */
+            justify-content: center; /* Centra horizontalmente los botones */
+            gap: 20px; /* Espacio entre los botones */
+        }
+        .footer-image {
+            margin-top: 40px; /* Espacio superior */
+            text-align: center; /* Centra la imagen */
+        }
+        .footer-image img {
+            max-width: 100%; /* Hace que la imagen sea responsiva */
+            height: auto; /* Mantiene la relación de aspecto */
+            border-radius: 8px; /* Bordes redondeados */
+            margin: 0 auto; /* Centra la imagen */
+        }
+    </style>
+</head>
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body has-text-centered">
+            <div class="container">
+                <h1 class="title">Joyería Anahi's</h1>
+                <h2 class="subtitle">Descubre nuestra colección exclusiva de joyas.</h2>
+                <div class="buttons">
+                    <a class="button is-large is-light" href="{{ url_for('login') }}">Iniciar Sesión</a>
+                    <a class="button is-large is-light" href="{{ url_for('register') }}">Registrarse</a>
+                    <a class="button is-large is-light" href="{{ url_for('productos') }}">Ver Productos</a>
+                </div>
+                <!-- Sección de imagen en el pie dentro del héroe -->
+                <div class="footer-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeqWCL_HtMUJZWE0htPoiSW1ID0bt8tDz4Q&s" alt="Imagen decorativa de joyería">
+                </div>
+            </div>
+        </div>
+        <div class="content has-text-centered">
+            <p>© Joyería Anahi's. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="icon is-large">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="icon is-large">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+                <a href="tel:+1234567890" class="icon is-large">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

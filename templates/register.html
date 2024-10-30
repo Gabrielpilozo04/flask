@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrarse - Joyería Anahi's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff); /* Degradado de fondo */
+            display: flex; /* Usar flexbox para centrar */
+            justify-content: center; /* Centrado horizontal */
+            align-items: center; /* Centrado vertical */
+            height: 100vh; /* Altura completa de la ventana */
+            margin: 0; /* Eliminar márgenes por defecto */
+            flex-direction: column; /* Colocar contenido en columna */
+        }
+        .box {
+            background-color: #ffffff; /* Color de fondo del cuadro */
+            padding: 40px; /* Espaciado interno del cuadro */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para el cuadro */
+            width: 350px; /* Ancho del cuadro (ajustado) */
+            text-align: center; /* Centrar texto */
+        }
+        h1 {
+            margin-bottom: 20px; /* Espaciado debajo del título */
+            font-size: 2rem; /* Tamaño de fuente del título */
+            color: #333; /* Color del título */
+        }
+        input {
+            width: 100%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            margin: 10px 0; /* Margen entre campos */
+            border: 1px solid #ccc; /* Borde del campo */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 1em; /* Tamaño de fuente */
+        }
+        button {
+            width: 100%; /* Ancho completo */
+            padding: 10px; /* Espaciado interno */
+            background-color: #00bcd4; /* Color del botón */
+            color: white; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 1em; /* Tamaño de fuente del botón */
+        }
+        button:hover {
+            background-color: #008c9e; /* Color del botón al pasar el ratón */
+        }
+        p {
+            margin-top: 10px; /* Espaciado superior del párrafo */
+        }
+        .footer {
+            margin-top: 20px; /* Espaciado superior */
+            text-align: center; /* Centrar texto del footer */
+            width: 100%; /* Ancho completo */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Registrarse</h1>
+
+        <!-- Bloque de mensajes de error o notificaciones -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="notification is-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('register') }}">
+            <label for="username">Nombre de usuario</label>
+            <input type="text" class="input" name="username" id="username" placeholder="Nombre de usuario" required>
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+        </form>
+
+        <p><a href="{{ url_for('login') }}">¿Ya tienes cuenta? Inicia sesión</a></p>
+    </div>
+
+    <footer class="footer">
+        <div class="content">
+            <p>© Joyería Anahi's. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="icon is-large">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="icon is-large">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+                <a href="tel:+1234567890" class="icon is-large">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+

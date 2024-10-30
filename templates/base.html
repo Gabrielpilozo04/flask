@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Joyería Anahi's{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{{ url_for('index') }}">
+                Joyería Anahi's
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{{ url_for('login') }}">Iniciar Sesión</a>
+                <a class="navbar-item" href="{{ url_for('register') }}">Registrarse</a>
+                <a class="navbar-item" href="{{ url_for('productos') }}">Ver Productos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="notification is-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer has-background-light">
+        <div class="content has-text-centered">
+            <p>© Joyería Anahi's. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="icon is-large">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="icon is-large">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+                <a href="tel:+1234567890" class="icon is-large">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

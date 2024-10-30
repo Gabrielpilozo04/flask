@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Carrito de Compras</h1>
+
+            {% if cart_items %}
+                <table class="table is-fullwidth is-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Producto</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product_id in cart_items %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>Producto {{ product_id }}</td>  <!-- Puedes cambiarlo a un nombre dinámico -->
+                                <td>
+                                    <a href="{{ url_for('remove_from_cart', product_id=product_id) }}" class="button is-danger">
+                                        Eliminar
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No tienes productos en el carrito.</p>
+            {% endif %}
+
+            <a href="{{ url_for('productos') }}" class="button is-primary">Seguir Comprando</a>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title has-text-centered">Nuestros Productos</h1>
+<div class="columns is-multiline">
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjaoT6_2mFIEeBjRkrkMYkSby3lln9gSV2FQ&s" alt="Producto 1">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Anillo de Oro</p>
+                <p class="subtitle is-6">$100</p>
+                <a href="{{ url_for('add_to_cart', product_id=1) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://previews.123rf.com/images/lachris77/lachris771405/lachris77140500124/28056431-joyer%C3%ADa-oro-collares-anillos-pulseras-reloj-riqueza.jpg" alt="Producto 2">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Reloj de Oro</p>
+                <p class="subtitle is-6">$150</p>
+                <a href="{{ url_for('add_to_cart', product_id=2) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://www.guillermovazquezjoyeria.com/wp-content/uploads/2023/07/jgv-joyas.webp" alt="Producto 3">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Anillo y Collar de Oro</p>
+                <p class="subtitle is-6">$130</p>
+                <a href="{{ url_for('add_to_cart', product_id=3) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://www.guillermovazquezjoyeria.com/wp-content/uploads/2023/06/GVPL1OA.027.png" alt="Producto 4">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Esclava de Oro</p>
+                <p class="subtitle is-6">$150</p>
+                <a href="{{ url_for('add_to_cart', product_id=4) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://www.guillermovazquezjoyeria.com/wp-content/uploads/2024/09/T1502101133100.png" alt="Producto 5">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Reloj de Plata</p>
+                <p class="subtitle is-6">$200</p>
+                <a href="{{ url_for('add_to_cart', product_id=5) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://www.garciajoyeros.com/blog/wp-content/uploads/2017/04/joyas-de-plata.jpg" alt="Producto 6">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Aretes de Plata</p>
+                <p class="subtitle is-6">$250</p>
+                <a href="{{ url_for('add_to_cart', product_id=6) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://www.el-mundo-de-las-piedras-preciosas.juwelo.es/wp-content/uploads/2018/04/Joyas-con-piedras-preciosas-Juwelo.jpg" alt="Producto 7">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Anillos de Oro con Diamantes</p>
+                <p class="subtitle is-6">$400</p>
+                <a href="{{ url_for('add_to_cart', product_id=7) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="https://salazarybermudez.com/wp-content/uploads/2022/07/tipos-de-pierdras-preciosas.jpg" alt="Producto 8">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="title is-4">Collar Esmeralda</p>
+                <p class="subtitle is-6">$550</p>
+                <a href="{{ url_for('add_to_cart', product_id=8) }}" class="button is-primary">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to bottom, #e0f7fa, #ffffff); /* Degradado de fondo */
+    }
+    .card {
+        border-radius: 8px; /* Bordes redondeados en las tarjetas */
+    }
+</style>
+{% endblock %}
+
